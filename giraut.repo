@@ -1,0 +1,6 @@
+[giraut-repo]
+name=Giraut repo
+baseurl=https://raw.githubusercontent.com/Giraut/rpm/master/
+enabled=1
+gpgcheck=1
+gpgkey=https://raw.githubusercontent.com/Giraut/rpm/master/KEY.gpg

@@ -1,6 +1,6 @@
 #!/bin/bash
-### This script should be run in the "packages" directory of the YUM / DNF
-### repository to update
+### This script should be run in the main directory of the YUM / DNF repository
+### to update
 
 ### Parameters
 # Email address for the GPG key
@@ -15,6 +15,9 @@ if ! ls *.rpm > /dev/null 2> /dev/null; then
   echo "No .rpm files in the current directory"
   exit
 fi
+
+# Create the KEY.gpg file
+gpg --armor --export "${EMAIL}" > KEY.gpg
 
 # Sign the packages
 rpm --define "_gpg_name ${EMAIL}" --addsign *.rpm
